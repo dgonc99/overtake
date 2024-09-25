@@ -1,0 +1,90 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.ballot {
+    flex: 1;
+    margin-right: 20px;
+    color: white;
+}
+
+.ballotBox {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    text-align: center;
+}
+
+    .ballotBox.selected {
+        background-color: #ff9800; /* Highlight selected box */
+    }
+
+.filledBox {
+    background: #15151E;
+}
+
+.driverList {
+    flex: 2;
+    color: white;
+}
+
+    .driverList ul {
+        padding: 0;
+    }
+
+    .driverList li {
+        padding: 10px;
+        margin-bottom: 5px;
+        border: 1px solid #ccc;
+        cursor: pointer;
+    }
+
+        .driverList li:hover {
+            background-color: #ff9800;
+        }
+
+.driverGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    gap: 5px;
+}
+
+.crossedOut {
+    text-decoration: line-through;
+    color: grey;
+}
+
+.submitButton {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+    .submitButton:hover {
+        background-color: #0056b3;
+    }
+
+.actualResultsBox {
+    padding: 10px;
+    margin-bottom: 5px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+.correct {
+    background-color: #4caf50; /* Green for correct predictions */
+}
+
+.nearMiss1 {
+    background-color: #ffeb3b; /* Yellow for 1 position off */
+}
+
+.nearMiss2 {
+    background-color: #ff9800; /* Orange for 2 positions off */
+}

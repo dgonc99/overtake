@@ -1,0 +1,13 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\server",
+    "\\web\\nginx",
+    "\\web\\public",
+    "\\web\\public\\images",
+    "\\web\\src",
+    "\\web\\src\\app"
+  ],
+  "SelectedNode": "\\docker-compose.yml",
+  "PreviewInSolutionExplorer": false
+}

@@ -1,162 +1,187 @@
 /* Container for the entire layout */
 .container {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
 
 /* Main content area styling */
 .main {
-  padding: 2rem;
-  overflow-y: auto;
+    padding: 2rem;
+    overflow-y: auto;
 }
 
 /* Top section styling */
 .top {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 2rem;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
 }
 
 .nextRace {
-  width: 60%;
-  background-color: #aa0000;
-  padding: 1rem;
-  border-radius: 15px;
-  color: white;
+    width: 60%;
+    background-color: #aa0000;
+    padding: 1rem;
+    border-radius: 15px;
+    color: white;
 }
 
 /* Title styling */
 .title {
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
-  font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
 }
 
 .driver {
-  width: 38%;
-  background-color: #aa0000;
-  padding: 1rem;
-  border-radius: 15px;
-  color: white;
+    width: 38%;
+    background-color: #aa0000;
+    padding: 1rem;
+    border-radius: 15px;
+    color: white;
 }
 
 /* Info container styling for driver and race */
 .driverInfo {
-  display: flex;
-  align-items: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.driverDetails {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-bottom: 1rem;
 }
 
 .raceInfo {
-  background-color: #15151e;
-  display: flex;
-  align-items: center;
-  border-radius: 15px;
+    background-color: #15151e;
+    display: flex;
+    align-items: center;
+    border-radius: 15px;
 }
 
 /* Image styling for driver and circuit */
 .driverImage {
-  margin-right: 1rem;
+    margin-right: 1rem;
 }
 
 .circuitImage {
-  margin-right: 1rem;
-  background-color: white;
-  border-radius: 15px;
-  padding: 20px;
+    margin-right: 1rem;
+    background-color: white;
+    border-radius: 15px;
+    padding: 20px;
 }
 
 .driverName {
-  font-size: 40px;
-  font-weight: bold;
+    font-size: 40px;
+    font-weight: bold;
+    text-align: left;
+    margin-top: 1rem;
 }
 
 .raceName {
-  font-size: 64px;
-  font-weight: bold;
+    font-size: 64px;
+    font-weight: bold;
+}
+
+.driverNoAndFlag {
+    display: flex;
+    flex-direction: row; /* Align number and flag in a row */
+    align-items: center;
+    margin-top: 1rem;
 }
 
 .driverNumber {
-  background-color: white;
-  font-size: 84px;
-  margin-top: 0.2rem;
-  margin-bottom: 0.2;
-  color: #04b2b7;
-  display: inline-block;
-  border-radius: 15px;
+    background-color: white;
+    font-size: 56px;
+    height: 63px;
+    color: #04b2b7;
+    padding: 0.2rem 1rem;
+    border-radius: 15px;
+    margin-right: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 .raceDate {
-  font-size: 48px;
-  margin-top: 0.2rem;
+    font-size: 48px;
+    margin-top: 0.2rem;
 }
 
 .driverFlag,
 .raceFlag {
-  margin-left: 0.5rem;
-  border-radius: 15px;
+    margin-left: 0.5rem;
+    border-radius: 15px;
 }
 
 .driverPhoto {
-  background-color: #04b2b7;
-  border-radius: 15px;
-  margin: 10px;
+    background-color: #04b2b7;
+    border-radius: 15px;
+    margin: 1rem;
 }
 
 /* Welcome section styling */
 .welcome {
-  text-align: center;
-  margin-bottom: 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
 }
 
-.welcome h1 {
-  font-size: 2rem;
-  color: #ff9800;
-}
+    .welcome h1 {
+        font-size: 2rem;
+        color: #ff9800;
+    }
 
-.welcome p {
-  font-size: 1.2rem;
-  color: white;
-}
+    .welcome p {
+        font-size: 1.2rem;
+        color: white;
+    }
 
 /* Body box styling */
 .bodyBox {
-  background-color: #15151e; /* Dark background for the main content box */
-  border-radius: 16px;
-  padding: 2rem;
-  margin: 0 auto; /* Center the box horizontally */
+    background-color: #15151e; /* Dark background for the main content box */
+    border-radius: 16px;
+    padding: 2rem;
+    margin: 0 auto; /* Center the box horizontally */
 }
 
 /* Sections container styling */
 .sections {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
 }
 
 /* Individual section styling */
 .section {
-  padding: 1rem;
-  border-radius: 8px;
-  color: #ff9800;
+    padding: 1rem;
+    border-radius: 8px;
+    color: #ff9800;
 }
 
-.section h2 {
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
-  font-weight: bold;
-  color: white;
-}
+    .section h2 {
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+        font-weight: bold;
+        color: white;
+    }
 
-.section p {
-  font-size: 1rem;
-}
+    .section p {
+        font-size: 1rem;
+    }
 
 /* Welcome text styling */
 .welcomeText {
-  font-size: 1.5rem;
-  color: #ff9800;
-  margin-bottom: 1rem;
-  text-align: center;
+    font-size: 1.5rem;
+    color: #ff9800;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.driversResults {
+    color: aliceblue;
 }
 
 /* Races Page top */

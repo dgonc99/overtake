@@ -29,7 +29,26 @@ and then:
 - the backend server will be accessible locally at [http://localhost:8080/](http://localhost:8080/); and
 - the web app will be served locally at [http://localhost:3000/](http://localhost:3000/).
 
+if you want to use live reloading while working on the frontend UI:
+
+- navigate to the web directory(cd web)
+- and input:
+- 
+```console
+$ npm run dev
+```
+
+- the web app will still be available locally at [http://localhost:3000/](http://localhost:3000/). however it will now utilize live reload.
+
 To stop the stack:
+
+- if using live reload(npm run dev):
+
+```console
+$ CTRL+c
+```
+
+- then in your main project folder:
 
 ```console
 $ docker compose down

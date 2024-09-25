@@ -1,56 +1,63 @@
 .container {
-  display: flex;
-  height: 100vh;
+    display: flex;
+    height: 100vh;
 }
 
 .sidebar {
-  width: 20%;
-  background-color: #2e0000;
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
+    width: 20%;
+    background-color: #2e0000;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .logoContainer {
-  display: flex;
-  align-items: center;
-  padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    padding: 1.5rem;
 }
 
 .logoImage {
-  width: 40px; /* Adjust size as needed */
-  height: 40px; /* Adjust size as needed */
-  margin-right: 1rem;
+    width: 80px; /* Adjust size as needed */
+    height: 80px; /* Adjust size as needed */
+    margin-right: 1rem;
 }
 
 .logoLink {
-  font-size: 2rem;
-  color: white;
-  text-decoration: none;
+    font-size: 3.5rem;
+    color: white;
+    text-decoration: none;
 }
 
 .nav {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 0 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 1rem;
+    width: 100%; /* Full width of the sidebar */
 }
 
 .navItem {
-  display: block;
-  width: 100%;
-  margin: 0.5rem 0;
-  padding: 0.5rem;
-  background-color: red;
-  color: white;
-  text-align: center;
-  text-decoration: none;
-  border-radius: 5px;
-  font-size: 1.2rem;
+    display: block;
+    width: calc(100% - 2rem);
+    height: 4rem;
+    margin: 0.5rem 1rem;
+    padding: 0.5rem;
+    background-color: red;
+    color: white;
+    border-radius: 5px;
+    font-size: 2rem;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 .navItem:hover {
-  background-color: darkred;
+    background-color: darkred;
+    color: #ff9800;
+    transform: scale(1.05);
 }
