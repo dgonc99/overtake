@@ -13,6 +13,12 @@ export async function getNextRace() {
     const raceTime = raceInfo.time;
     const raceTimeDate = new Date(`${raceDate}T${raceTime}`);
     const circuitLocation = raceInfo.Circuit.Location.country;
+    const firstPractice = raceInfo.FirstPractice ? raceInfo.FirstPractice.time : null;
+    const secondPractice = raceInfo.SecondPractice ? raceInfo.SecondPractice.time : null;
+    const thirdPractice = raceInfo.Sprint ? raceInfo.Sprint.time : null;
+    const qualifyTime = raceInfo.Qualifying ? raceInfo.Qualifying.time : null;
+      
+  
 
     const apiUrlGPName = `https://api.openf1.org/v1/meetings?year=2024&country_name=${raceInfo.Circuit.Location.country}`;
 
@@ -26,6 +32,10 @@ export async function getNextRace() {
       circuitLocation,
       raceTimeDate,
       gpName,
+      firstPractice,
+      secondPractice,
+      thirdPractice,
+      qualifyTime,
     };
   } catch (error) {
     console.error("Error fetching race data: ", error);
