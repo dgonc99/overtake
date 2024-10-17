@@ -10,4 +10,6 @@ public class Driver
     public required string Nationality { get; set; }
     public required double Height { get; set; }
     public required int TeamId { get; set; }
+    public required string HeadshotPath { get; set; }
+    public required string CarImagePath { get; set; }
 }

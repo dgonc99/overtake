@@ -411,4 +411,71 @@ public class PostgresDatabase : IDatabase
 
         return ballotContents.ToArray();
     }
+
+    // Retrieve driver metadata by driver number
+    public async Task<Driver> GetDriverMetadataByNumberAsync(int driverNumber)
+    {
+        await using var cmd = _dataSource.CreateCommand(
+            @"SELECT driver_id, driver_number, first_name, last_name, age, nationality, height, team_id, headshot_path, car_image_path
+          FROM driver
+          WHERE driver_number=@driver_number"
+        );
+
+        cmd.Parameters.AddWithValue("driver_number", driverNumber);
+
+        await using var reader = await cmd.ExecuteReaderAsync();
+
+        if (await reader.ReadAsync())
+        {
+            return new Driver
+            {
+                DriverId = reader.GetInt32(0),         // Correct column for driver_id
+                DriverNumber = reader.GetInt32(1),     // Correct column for driver_number
+                FirstName = reader.GetString(2),
+                LastName = reader.GetString(3),
+                Age = reader.GetInt32(4),
+                Nationality = reader.GetString(5),
+                Height = reader.GetFloat(6),
+                TeamId = reader.GetInt32(7),
+                HeadshotPath = reader.GetString(8),
+                CarImagePath = reader.GetString(9)
+            };
+        }
+
+        return null; // Return null if no driver is found with the given driver number
+    }
+
+
+    public async Task<Driver[]> PopulateDriversAsync()
+    {
+        var drivers = new List<Driver>();
+
+        await using var cmd = _dataSource.CreateCommand(
+            @"SELECT driver_number, first_name, last_name, age, nationality, height, team_id, headshot_path, car_image_path
+              FROM driver"
+        );
+
+        await using var reader = await cmd.ExecuteReaderAsync();
+        while (await reader.ReadAsync())
+        {
+            var driver = new Driver
+            {
+                DriverId = reader.GetInt32(0),
+                DriverNumber = reader.GetInt32(1),
+                FirstName = reader.GetString(2),
+                LastName = reader.GetString(3),
+                Age = reader.GetInt32(4),
+                Nationality = reader.GetString(5),
+                Height = reader.GetFloat(6),
+                TeamId = reader.GetInt32(7),
+                HeadshotPath = reader.GetString(8),
+                CarImagePath = reader.GetString(9)
+
+            };
+
+            drivers.Add(driver);
+        }
+
+        return drivers.ToArray();
+    }
 }

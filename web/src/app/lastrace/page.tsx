@@ -24,6 +24,7 @@ export default function LastRace() {
     circuitLocation: string;
     raceTimeDate: Date;
   }>(null);
+  const [imageUrl, setImageUrl] = useState("");
 
   // Fetch race results when the component mounts
   useEffect(() => {
@@ -44,7 +45,22 @@ export default function LastRace() {
       }
     };
 
+    let driverId = 14;
+
+    const fetchDriverHeadshots = async () => {
+      const response2 = await fetch(
+        "http://localhost:8080/api/driver/headshot/" + driverId,
+        {
+          method: "GET",
+        }
+      );
+      const data2 = await response2.json();
+      console.log(data2);
+      setImageUrl(data2);
+    };
+
     fetchRaceResults();
+    fetchDriverHeadshots();
   }, []);
 
   useEffect(() => {
@@ -163,6 +179,16 @@ export default function LastRace() {
       <div className={styles.driversResults}>
         <h1>Time to next race:</h1>
         <RaceCountdown />
+        <div>
+          <img
+            src={imageUrl}
+            style={{
+              display: "block",
+            }}
+            alt="Lewis Hamilton"
+            className={styles.driverImage}
+          />
+        </div>
       </div>
     </SidebarLayout>
   );

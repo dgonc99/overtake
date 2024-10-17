@@ -87,7 +87,9 @@ CREATE TABLE driver (
 	age INT NOT NULL,
 	nationality VARCHAR(50) NOT NULL,
 	height NUMERIC(5, 2) NOT NULL,
-	team_id INT REFERENCES team(team_id) ON DELETE SET NULL
+	team_id INT REFERENCES team(team_id) ON DELETE SET NULL,
+	headshot_path VARCHAR(255) NOT NULL, -- Path to the image file in the repository
+	car_image_path VARCHAR(255) NOT NULL -- Path to the image file in the repository
 );
 
 CREATE TABLE ballotContent(
@@ -207,13 +209,15 @@ VALUES
   ('Renault', 'France', NOW());
 
 -- Insert test data for driver table
-INSERT INTO driver (driver_number, first_name, last_name, age, nationality, height, team_id)
+INSERT INTO driver (driver_number, first_name, last_name, age, nationality, height, team_id, headshot_path, car_image_path)
 VALUES 
-  (44, 'Lewis', 'Hamilton', 38, 'UK', 1.74, 2),
-  (33, 'Max', 'Verstappen', 26, 'Netherlands', 1.81, 3),
-  (16, 'Charles', 'Leclerc', 26, 'Monaco', 1.80, 1),
-  (4, 'Lando', 'Norris', 24, 'UK', 1.70, 4),
-  (14, 'Fernando', 'Alonso', 42, 'Spain', 1.71, 5);
+  (1, 'Max', 'Verstappen', 26, 'Netherlands', 1.81, 3, './assets/driver_headshot/verstappen.png', './assets/cars/rbr.png'),
+  (44, 'Lewis', 'Hamilton', 37, 'UK', 1.74, 2, './assets/driver_headshot/hamilton.png', './assets/cars/mercedes.png'),
+  (77, 'Valtteri', 'Bottas', 32, 'Finland', 1.73, 2, './assets/driver_headshot/bottas.png', './assets/cars/kick_sauber.png'),
+  (4, 'Lando', 'Norris', 24, 'UK', 1.77, 4, './assets/driver_headshot/norris.png', './assets/cars/McLaren.png'),
+  (14, 'Fernando', 'Alonso', 40, 'Spain', 1.71, 4, './assets/driver_headshot/alonso.png', './assets/cars/aston_martin.png'),
+  (16, 'Charles', 'Leclerc', 24, 'Monaco', 1.80, 1, './assets/driver_headshot/leclerc.png', './assets/cars/ferrari.png');
+
 
 -- Insert test data for ballotContent table
 INSERT INTO ballotContent (ballot_id, position, driver_name)
@@ -232,3 +236,4 @@ VALUES
   (3, 3, 3),
   (4, 4, 4),
   (5, 5, 5);
+
