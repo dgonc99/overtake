@@ -411,4 +411,34 @@ public class PostgresDatabase : IDatabase
 
         return ballotContents.ToArray();
     }
+
+    public async Task<RaceLeagueInfo[]> GetPublicLeagues()
+    {
+        var publicLeagues = new List<RaceLeagueInfo>();
+        bool isPublic = true;
+
+        await using var cmdLeague = _dataSource.CreateCommand(
+            @"SELECT league_id, owner_id, name, is_public FROM raceLeague
+                where is_public=@isPublic"
+        );
+
+        cmdLeague.Parameters.AddWithValue("isPublic", isPublic);
+
+        await using var leagueReader = await cmdLeague.ExecuteReaderAsync();
+
+        while (await leagueReader.ReadAsync()) // Use while to iterate over all results
+        {
+            RaceLeagueInfo leagueInfo = new RaceLeagueInfo
+            {
+                LeagueId = leagueReader.GetInt32(0),
+                OwnerId = leagueReader.GetInt32(1),
+                Name = leagueReader.GetString(2),
+                IsPublic = leagueReader.GetBoolean(3),
+            };
+
+            publicLeagues.Add(leagueInfo);
+        }
+
+        return publicLeagues.ToArray();
+    }
 }

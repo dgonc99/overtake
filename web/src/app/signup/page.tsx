@@ -18,9 +18,15 @@ export default function Signup() {
   const [username, setUsername] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [confirmPassword, setConfirmPassword] = useState<string>("");
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   const handleSubmit = async (e: MouseEvent) => {
     e.preventDefault();
+
+    if (password !== confirmPassword) {
+      setErrorMessage("Passwords do not match.");
+      return;
+    }
 
     const response = await fetch("http://localhost:8080/api/account/register", {
       method: "POST",
@@ -37,8 +43,7 @@ export default function Signup() {
     });
 
     if (response.status !== 200) {
-      // TODO: handle error on UI instead
-      console.error(`non-successful status code: ${response.status}`);
+        setErrorMessage("Failed to create account. Please try again.");
     } else {
       const session = (await response.json()) as Session;
       identity.setSessionToken(session.token);
@@ -130,6 +135,7 @@ export default function Signup() {
               }}
             />
           </div>
+          {errorMessage && <p className="text-red-500">{errorMessage}</p>}
           <div>
             <input
               className="px-4 py-2 bg-primary text-white cursor-pointer"

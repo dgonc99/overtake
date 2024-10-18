@@ -6,6 +6,7 @@ using Overtake.Models.Requests;
 using Overtake.Entities;
 using Microsoft.AspNetCore.Authorization;
 using System.Security.Claims;
+using System.Threading.Tasks.Dataflow;
 
 
 /// <summary>
@@ -63,6 +64,30 @@ public class LeagueController : ControllerBase
         RaceLeagueInfo[] leagues = await _database.PopulateLeaguesAsync(userId);
 
         return new OkObjectResult(leagues);
+    }
+
+    [HttpGet]
+    [Route("populatepublic")]
+    [Produces("application/json")]
+    public async Task<ActionResult<RaceLeagueInfo[]>> PopulatePublicAsync()
+    {
+        RaceLeagueInfo[] leagues = await _database.GetPublicLeagues();
+
+        return new OkObjectResult(leagues);
+    }
+
+    [HttpPost]
+    [Route("join")]
+    [Produces("application/json")]
+    public async Task<ActionResult<int>> JoinLeagueAsync([FromBody] JoinLeagueRequest request)
+    {
+        int userId = Convert.ToInt32(HttpContext.User.FindFirst(ClaimTypes.NameIdentifier)?.Value);
+
+        var account = await _database.GetAccountByIdAsync(userId);
+
+        int membership = await _database.InsertLeagueMembershipAsync(request.leagueId, account.AccountId);
+
+        return new OkObjectResult(membership);
     }
     
 }
