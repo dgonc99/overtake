@@ -2,6 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\server",
+    "\\server\\Controllers",
+    "\\server\\Entities",
+    "\\server\\Interfaces",
     "\\server\\Models",
     "\\server\\Resources",
     "\\server\\Services",
@@ -11,6 +14,6 @@
     "\\web\\src\\app\\utils",
     "\\web\\src\\app\\utils\\api"
   ],
-  "SelectedNode": "\\server\\Services\\PostgresDatabase.cs",
+  "SelectedNode": "\\server\\Entities\\Driver.cs",
   "PreviewInSolutionExplorer": false
 }
