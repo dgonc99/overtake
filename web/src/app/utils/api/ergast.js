@@ -39,7 +39,7 @@ export async function getNextRace() {
 }
 
 export async function getRaceResults(season, round) {
-  const apiUrl = `https://api.jolpi.ca/ergast/f1/${season}/${round}/results.json`;
+  const apiUrl = `https://ergast.com/api/f1/${season}/${round}/results.json`;
 
   try {
     const response = await fetch(apiUrl);
@@ -64,7 +64,7 @@ export async function getRaceResults(season, round) {
 }
 
 export async function getPrevRace() {
-  const apiUrl = "https://api.jolpi.ca/ergast/f1/current/last/results.json";
+  const apiUrl = "https://ergast.com/api/f1/current/last/results.json";
 
   try {
     const response = await fetch(apiUrl);
@@ -86,7 +86,7 @@ export async function getPrevRace() {
 }
 
 export async function getSeasonRounds(season) {
-  const apiUrl = `https://api.jolpi.ca/ergast/f1/${season}.json`;
+  const apiUrl = `https://ergast.com/api/f1/${season}.json`;
 
   try {
     const response = await fetch(apiUrl);
@@ -103,7 +103,7 @@ export async function getSeasonRounds(season) {
 }
 
 export async function getDrivers() {
-  const apiUrl = "https://api.jolpi.ca/ergast/f1/current/last/drivers.json";
+  const apiUrl = "https://ergast.com/api/f1/current/last/drivers.json";
 
   try {
     const response = await fetch(apiUrl);
@@ -132,7 +132,7 @@ export async function getDrivers() {
 }
 
 export async function getConstructors() {
-  const apiUrl = "https://api.jolpi.ca/ergast/f1/current/constructors.json";
+  const apiUrl = "https://ergast.com/api/f1/current/constructors.json";
 
   try {
     const response = await fetch(apiUrl);
@@ -158,7 +158,7 @@ export async function getConstructors() {
 }
 
 export async function getCircuits() {
-  const apiUrl = "https://api.jolpi.ca/ergast/f1/current.json";
+  const apiUrl = "https://ergast.com/api/f1/current.json";
 
   try {
     const response = await fetch(apiUrl);
@@ -187,7 +187,7 @@ export async function getCircuits() {
 }
 
 export async function overtakerOfTheRace() {
-  const apiUrl = "https://api.jolpi.ca/ergast/f1/current/last/results.json";
+  const apiUrl = "https://ergast.com/api/f1/current/last/results.json";
 
   try {
     const response = await fetch(apiUrl);
