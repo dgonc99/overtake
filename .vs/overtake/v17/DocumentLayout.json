@@ -1,22 +1,30 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Repos\\Overtake\\overtake\\",
+  "WorkspaceRootPath": "C:\\Overtake\\overtake\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{AED117CB-D641-430A-994B-65C5354CDD20}|server\\overtake-server.csproj|c:\\repos\\overtake\\overtake\\server\\services\\postgresdatabase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AED117CB-D641-430A-994B-65C5354CDD20}|server\\overtake-server.csproj|solutionrelative:server\\services\\postgresdatabase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Overtake\\overtake\\docker-compose.yml||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:docker-compose.yml||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AED117CB-D641-430A-994B-65C5354CDD20}|server\\overtake-server.csproj|c:\\repos\\overtake\\overtake\\server\\controllers\\friendcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AED117CB-D641-430A-994B-65C5354CDD20}|server\\overtake-server.csproj|solutionrelative:server\\controllers\\friendcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Overtake\\overtake\\server\\Services\\PostgresDatabase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:server\\Services\\PostgresDatabase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AED117CB-D641-430A-994B-65C5354CDD20}|server\\overtake-server.csproj|c:\\repos\\overtake\\overtake\\server\\interfaces\\idatabase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AED117CB-D641-430A-994B-65C5354CDD20}|server\\overtake-server.csproj|solutionrelative:server\\interfaces\\idatabase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Overtake\\overtake\\server\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:server\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AED117CB-D641-430A-994B-65C5354CDD20}|server\\overtake-server.csproj|c:\\repos\\overtake\\overtake\\server\\resources\\initialize.sql||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{AED117CB-D641-430A-994B-65C5354CDD20}|server\\overtake-server.csproj|solutionrelative:server\\resources\\initialize.sql||{3B902123-F8A7-4915-9F01-361F908088D0}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Overtake\\overtake\\server\\Interfaces\\IDatabase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:server\\Interfaces\\IDatabase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Overtake\\overtake\\server\\Controllers\\FriendController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:server\\Controllers\\FriendController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Overtake\\overtake\\server\\Resources\\Initialize.sql||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:server\\Resources\\Initialize.sql||{3B902123-F8A7-4915-9F01-361F908088D0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,49 +34,69 @@
       "DocumentGroups": [
         {
           "DockedWidth": 191,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "docker-compose.yml",
+              "DocumentMoniker": "C:\\Overtake\\overtake\\docker-compose.yml",
+              "RelativeDocumentMoniker": "docker-compose.yml",
+              "ToolTip": "C:\\Overtake\\overtake\\docker-compose.yml",
+              "RelativeToolTip": "docker-compose.yml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003775|",
+              "WhenOpened": "2024-12-05T18:30:10.11Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Overtake\\overtake\\server\\Program.cs",
+              "RelativeDocumentMoniker": "server\\Program.cs",
+              "ToolTip": "C:\\Overtake\\overtake\\server\\Program.cs",
+              "RelativeToolTip": "server\\Program.cs",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAAAEwAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-05T18:27:55.41Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "IDatabase.cs",
-              "DocumentMoniker": "C:\\Repos\\Overtake\\overtake\\server\\Interfaces\\IDatabase.cs",
+              "DocumentMoniker": "C:\\Overtake\\overtake\\server\\Interfaces\\IDatabase.cs",
               "RelativeDocumentMoniker": "server\\Interfaces\\IDatabase.cs",
-              "ToolTip": "C:\\Repos\\Overtake\\overtake\\server\\Interfaces\\IDatabase.cs",
+              "ToolTip": "C:\\Overtake\\overtake\\server\\Interfaces\\IDatabase.cs",
               "RelativeToolTip": "server\\Interfaces\\IDatabase.cs",
               "ViewState": "AgIAAA4AAAAAAAAAAAAwwCwAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-07T04:58:45.834Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-07T04:58:45.834Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "FriendController.cs",
+              "DocumentMoniker": "C:\\Overtake\\overtake\\server\\Controllers\\FriendController.cs",
+              "RelativeDocumentMoniker": "server\\Controllers\\FriendController.cs",
+              "ToolTip": "C:\\Overtake\\overtake\\server\\Controllers\\FriendController.cs",
+              "RelativeToolTip": "server\\Controllers\\FriendController.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAADcAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-06T23:01:47.444Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "FriendController.cs",
-              "DocumentMoniker": "C:\\Repos\\Overtake\\overtake\\server\\Controllers\\FriendController.cs",
-              "RelativeDocumentMoniker": "server\\Controllers\\FriendController.cs",
-              "ToolTip": "C:\\Repos\\Overtake\\overtake\\server\\Controllers\\FriendController.cs",
-              "RelativeToolTip": "server\\Controllers\\FriendController.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAADcAAAAqAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-06T23:01:47.444Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
               "Title": "PostgresDatabase.cs",
-              "DocumentMoniker": "C:\\Repos\\Overtake\\overtake\\server\\Services\\PostgresDatabase.cs",
+              "DocumentMoniker": "C:\\Overtake\\overtake\\server\\Services\\PostgresDatabase.cs",
               "RelativeDocumentMoniker": "server\\Services\\PostgresDatabase.cs",
-              "ToolTip": "C:\\Repos\\Overtake\\overtake\\server\\Services\\PostgresDatabase.cs",
+              "ToolTip": "C:\\Overtake\\overtake\\server\\Services\\PostgresDatabase.cs",
               "RelativeToolTip": "server\\Services\\PostgresDatabase.cs",
               "ViewState": "AgIAAH8CAAAAAAAAAAAQwJECAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -77,16 +105,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "Initialize.sql",
-              "DocumentMoniker": "C:\\Repos\\Overtake\\overtake\\server\\Resources\\Initialize.sql",
+              "DocumentMoniker": "C:\\Overtake\\overtake\\server\\Resources\\Initialize.sql",
               "RelativeDocumentMoniker": "server\\Resources\\Initialize.sql",
-              "ToolTip": "C:\\Repos\\Overtake\\overtake\\server\\Resources\\Initialize.sql",
+              "ToolTip": "C:\\Overtake\\overtake\\server\\Resources\\Initialize.sql",
               "RelativeToolTip": "server\\Resources\\Initialize.sql",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2024-11-07T04:11:26.083Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-07T04:11:26.083Z"
             }
           ]
         }

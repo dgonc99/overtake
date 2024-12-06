@@ -13,13 +13,13 @@ export default function Login() {
   const identity = useContext(IdentityContext);
 
   const [username, setUsername] = useState<string>("");
-    const [password, setPassword] = useState<string>("");
-    const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  const [password, setPassword] = useState<string>("");
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   const handleSubmit = async (e: MouseEvent) => {
     e.preventDefault();
 
-    const response = await fetch("http://localhost:8080/api/account/login", {
+    const response = await fetch("http://10.0.0.152:8080/api/account/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -31,7 +31,7 @@ export default function Login() {
     });
 
     if (response.status !== 200) {
-      setErrorMessage("Invalid login credentials. Please try again.")
+      setErrorMessage("Invalid login credentials. Please try again.");
     } else {
       const session = (await response.json()) as Session;
       identity.setSessionToken(session.token);
@@ -71,7 +71,8 @@ export default function Login() {
               }}
             />
           </div>
-          {errorMessage && <p className="text-red-500">{errorMessage}</p>} {/* Display error message */}
+          {errorMessage && <p className="text-red-500">{errorMessage}</p>}{" "}
+          {/* Display error message */}
           <div>
             <input
               className="px-4 py-2 bg-primary text-white cursor-pointer"
