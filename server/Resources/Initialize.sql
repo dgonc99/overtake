@@ -377,7 +377,7 @@ VALUES
 (9, 10, 'Alexander Albon'),
 (10, 1, 'Max Verstappen'),
 (10, 2, 'Oliver Bearman'),
-(10, 3, 'Fernando Alonso'),
+(10, 3, 'Pierre Gasly'),
 (10, 4, 'Lance Stroll'),
 (10, 5, 'Nico Hülkenberg'),
 (10, 6, 'Guanyu Zhou'),
