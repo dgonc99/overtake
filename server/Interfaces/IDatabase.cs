@@ -89,4 +89,8 @@ public interface IDatabase
     Task<Team> GetTeamMetadataByIdAsync(string constructorId);
 
     Task<bool> UsernameExistsAsync(string username);
+
+    Task<string> GetUserEmail(int userId);
+
+    Task<bool> UpdateField(int userId, string fieldName, object fieldValue);
 }

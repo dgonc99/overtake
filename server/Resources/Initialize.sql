@@ -138,7 +138,7 @@ CREATE TABLE raceResult (
 -- Insert test data for account table
 INSERT INTO account (username, first_name, last_name, email, password_hash)
 VALUES 
-  ('admin', 'Overtake', 'Admin', 'admin@gmail.com', digest('overtake|test', 'sha256')),
+  ('admin', 'Overtake', 'Admin', 'dgonc99@gmail.com', digest('overtake|test', 'sha256')),
   ('user2', 'Jane', 'Smith', 'jane.smith@example.com', digest('overtake|test', 'sha256')),
   ('user3', 'Bob', 'Brown', 'bob.brown@example.com', digest('overtake|test', 'sha256')),
   ('user4', 'Alice', 'Green', 'alice.green@example.com', digest('overtake|test', 'sha256')),

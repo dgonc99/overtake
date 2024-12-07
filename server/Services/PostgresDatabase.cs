@@ -1284,4 +1284,46 @@ public class PostgresDatabase : IDatabase
         return (bool)await cmd.ExecuteScalarAsync();
     }
 
+    public async Task<string?> GetUserEmail(int userId)
+    {
+        await using var cmd = _dataSource.CreateCommand(
+            @"SELECT email FROM account WHERE account_id = @userId"
+        );
+
+        cmd.Parameters.AddWithValue("userId", userId);
+
+        await using var reader = await cmd.ExecuteReaderAsync();
+
+        if (await reader.ReadAsync())
+        {
+            var email = reader.IsDBNull(0) ? null : reader.GetString(0);
+            Console.WriteLine($"Retrieved email: {email}"); // Log for debugging
+            return email;
+        }
+
+        Console.WriteLine($"No email found for userId: {userId}"); // Log for debugging
+        return null;
+    }
+
+    public async Task<bool> UpdateField(int userId, string fieldName, object? fieldValue)
+    {
+        var allowedFields = new HashSet<string> { "first_name", "last_name", "username", "password" };
+        if (!allowedFields.Contains(fieldName.ToLower()))
+        {
+            throw new ArgumentException($"Field '{fieldName}' is not allowed to be updated.", nameof(fieldName));
+        }
+
+        var query = $@"
+        UPDATE account
+        SET {fieldName} = @fieldValue
+        WHERE account_id = @userId";
+
+        await using var cmd = _dataSource.CreateCommand(query);
+
+        cmd.Parameters.AddWithValue("fieldValue", fieldValue ?? DBNull.Value);
+        cmd.Parameters.AddWithValue("userId", userId);
+
+        var rowsAffected = await cmd.ExecuteNonQueryAsync();
+        return rowsAffected > 0;
+    }
 }

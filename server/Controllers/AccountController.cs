@@ -2,7 +2,9 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Security.Cryptography;
 using System.Text;
+using System.Text.RegularExpressions;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using Overtake.Interfaces;
@@ -21,12 +23,14 @@ public class AccountController : ControllerBase
     private readonly IDatabase _database;
     private readonly ILogger<AccountController> _logger;
     private readonly IConfiguration _configuration;
+    private readonly IEmailService _emailService;
 
-    public AccountController(IDatabase database, ILogger<AccountController> logger, IConfiguration configuration)
+    public AccountController(IDatabase database, ILogger<AccountController> logger, IConfiguration configuration, IEmailService emailService)
     {
         _database = database;
         _logger = logger;
         _configuration = configuration;
+        _emailService = emailService;
     }
 
     /// <summary>
@@ -167,5 +171,74 @@ public class AccountController : ControllerBase
             HighestLeaguePoints = points.HighestLeaguePoints,
             HighestLeagueName = points.HighestLeagueName
         });
+    }
+
+    [Authorize]
+    [HttpPost]
+    [Route("send-edit-email")]
+    public async Task<IActionResult> SendEditEmail()
+    {
+        // Get the user ID from the authenticated user's claims
+        int userId = Convert.ToInt32(HttpContext.User.FindFirst(ClaimTypes.NameIdentifier)?.Value);
+
+        // Fetch the user's email from the database
+        var email = await _database.GetUserEmail(userId);
+        if (string.IsNullOrEmpty(email))
+        {
+            _logger.LogWarning("Email not found for user ID: {UserId}", userId);
+            return BadRequest("Email not found.");
+        }
+
+        // Define the link for the edit profile page
+        string link = "http://localhost:3000/editprofile";
+
+        try
+        {
+            // Log the email and link details
+            _logger.LogInformation("Sending email to: {Email} with link: {Link}", email, link);
+
+            // Send the email using the email service
+            await _emailService.SendEmailAsync(email, "Edit Profile Link",
+                $"Click the following link to edit your profile: {link}");
+
+            // Return success response
+            return Ok("Email sent successfully.");
+        }
+        catch (Exception ex)
+        {
+            // Log any errors encountered
+            _logger.LogError(ex, "Error while sending email to {Email}", email);
+            return StatusCode(500, $"Error sending email: {ex.Message}");
+        }
+    }
+
+    [Authorize]
+    [HttpPost]
+    [Route("update-profile")]
+    public async Task<IActionResult> UpdateProfile([FromBody] UpdateProfileRequest request)
+    {
+        int userId = Convert.ToInt32(HttpContext.User.FindFirst(ClaimTypes.NameIdentifier)?.Value);
+
+        if (!string.IsNullOrEmpty(request.FirstName))
+        {
+            await _database.UpdateField(userId, "first_name", request.FirstName);
+        }
+
+        if (!string.IsNullOrEmpty(request.LastName))
+        {
+            await _database.UpdateField(userId, "last_name", request.LastName);
+        }
+
+        if (!string.IsNullOrEmpty(request.Username))
+        {
+            await _database.UpdateField(userId, "username", request.Username);
+        }
+
+        if (!string.IsNullOrEmpty(request.Password))
+        {
+            await _database.UpdateField(userId, "password", request.Password);
+        }
+
+        return Ok("Profile updated successfully.");
     }
 }
