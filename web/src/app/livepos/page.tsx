@@ -20,7 +20,7 @@ export default function LivePos() {
 
   const [events, setEvents] = useState<Events>();
   const [liveFlag, setLiveFlag] = useState<string>("");
-  const [liveEvent, setLiveEvent] = useState<boolean>(false);
+  const [liveEvent, setLiveEvent] = useState<boolean>(true);
 
   const apiurl = "https://api.openf1.org/v1/race_control?session_key=latest";
 
@@ -49,11 +49,11 @@ export default function LivePos() {
       const lastTime = new Date(flagEvents[0].date);
       console.log(lastTime);
 
-      if (currentTime.getTime() > lastTime.getTime() + 7200000) {
-        setLiveEvent(false);
-      } else {
-        setLiveEvent(true);
-      }
+      // if (currentTime.getTime() > lastTime.getTime() + 7200000) {
+      //   setLiveEvent(false);
+      // } else {
+      //   setLiveEvent(true);
+      // }
     };
 
     fetchData(); // Initial fetch

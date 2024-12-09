@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import { getNextRace } from "../../utils/api/ergast";
 import HamsterLoader from "../loaders/hamsterloader";
+import { getNext2025 } from "@/app/utils/api/overtake";
 
 export default function RaceCountdown() {
   const [raceData, setRaceData] = useState(null);
@@ -15,7 +16,7 @@ export default function RaceCountdown() {
   //Request: make a component to generate a countdown to the next race that uses the getNextRace function to set the deadline of the countdown
   useEffect(() => {
     async function fetchRace() {
-      const race = await getNextRace();
+      const race = await getNext2025();
       setRaceData(race);
       if (race && race.raceTimeDate) {
         calculateTimeLeft(race.raceTimeDate);
