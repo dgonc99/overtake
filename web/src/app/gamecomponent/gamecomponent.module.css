@@ -1,40 +1,188 @@
+/* General Container */
 .container {
-    text-align: center;
-    font-family: Arial, sans-serif;
+    background: #15151e;
+    padding: 25px;
+    border-radius: 15px;
+    margin: 40px auto;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
+    color: white;
 }
 
-.raceTrack {
+/* Header */
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    border: 3px solid #aa0000;
+    padding: 15px;
+    border-radius: 15px;
+}
+
+    .header h1 {
+        font-size: 2rem;
+        text-transform: uppercase;
+        color: #f44336;
+    }
+
+/* Buttons */
+.button {
+    background-color: #aa0000;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin: 10px;
+    transition: background-color 0.3s ease;
+}
+
+    .button:hover {
+        background-color: #ff8a00;
+        color: #aa0000;
+        transform: scale(1.05);
+    }
+
+    .button:disabled {
+        background-color: #555555;
+        cursor: not-allowed;
+    }
+
+/* Starting Grid */
+.startingGrid {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Space between the rows */
+    justify-content: center;
     margin-top: 20px;
 }
 
-.driverRow {
+.gridPosition {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 120px; /* Adjusted height */
+    width: 120px; /* Adjusted width */
+    border: 2px solid #ffffff;
+    border-radius: 15px; /* Rounded corners */
+    text-align: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    margin: 25px; /* 25px margin between items */
+}
+
+.topRow {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); /* Dynamically fit drivers */
+    justify-content: center;
+    gap: 35px;
+}
+
+.bottomRow {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); /* Dynamically fit drivers */
+    justify-content: center;
+    gap: 35px; 
+    position: relative;
+    left: 70px; /* Offset bottom row 50px to the right */
+}
+
+.positionNumber {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 5px;
+}
+
+.driver {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+}
+
+.driverImage {
+    border-radius: 50%;
+    border: 2px solid #ffffff;
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto; /* Ensure centering */
+}
+
+.driver p {
+    margin-top: 5px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+/* Track and Progress Bars */
+.track {
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #2d2d2d;
+}
+
+.progressRow {
     display: flex;
     align-items: center;
     margin-bottom: 10px;
 }
 
-    .driverRow span {
+    .progressRow p {
         width: 150px;
         text-align: left;
+        font-size: 0.9rem;
         font-weight: bold;
     }
 
 .progressBar {
     flex: 1;
-    height: 20px;
-    background-color: #ddd;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    height: 25px;
+    background-color: #444444;
+    border-radius: 15px;
     overflow: hidden;
+    position: relative;
+    box-shadow: inset 0px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 .progress {
     height: 100%;
-    background-color: #4caf50;
-    transition: width 1s linear; /* Smooth animation */
+    border-radius: 15px;
+    transition: width 1s linear;
 }
 
-.results {
+/* Race Results */
+.raceresults table {
     margin-top: 20px;
-    text-align: left;
+    width: 100%;
+    background: #15151e;
+    padding: 25px;
+    border-radius: 15px;
+    background-color: #630000;
+    text-align: center;
+}
+
+.raceresults th {
+    padding: 10px;
+    border-bottom: 1px solid white;
+    background-color: #262630;
+    color: white;
+    font-size: large;
+}
+
+.raceresults td {
+    padding: 3px;
+    font-size: small;
+}
+
+.raceresults tr:nth-child(even) {
+    background-color: #420000;
 }

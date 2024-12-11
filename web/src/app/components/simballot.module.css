@@ -1,0 +1,118 @@
+.pageContainer {
+    display: flex;
+    gap: 20px;
+}
+
+.leftColumn {
+    flex: 1;
+    max-width: 33%;
+    background-color: #15151E;
+    border-radius: 15px;
+    padding: 10px;
+}
+
+.rightColumn {
+    flex: 2;
+    max-width: 66%;
+    background-color: #15151E;
+    border-radius: 15px;
+}
+
+.podiumAndReturn {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.returnButton {
+    background-color: #AA0000;
+    padding: 15px 30px;
+    height: 20%;
+    margin-left: 5%;
+    border-radius: 15px;
+    color: white;
+    font-size: 3rem;
+    transition: transform 0.3s ease;
+}
+
+    .returnButton:hover {
+        transform: scale(1.05);
+        background-color: #900000;
+    }
+
+.podiumDisplayContainer {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+.scoreDisplay {
+    color: white;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    padding: 20px;
+}
+
+.toggleButton {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+    .toggleButton:hover {
+        background-color: #45a049;
+    }
+
+.loadingImageContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60%
+}
+
+.inputBox {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    outline: none;
+    box-sizing: border-box;
+    background-color: #f9f9f9;
+    color: black;
+}
+
+    .inputBox:focus {
+        border-color: #4CAF50;
+        background-color: #fff;
+    }
+
+.submitButton {
+    padding: 10px 20px;
+    background-color: #FF8A00;
+    color: white;
+    width: 100%;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.3s ease;
+}
+
+    .submitButton:hover {
+        background-color: #FF6A00; /* Adjust hover background color */
+        transform: scale(1.05); /* Slightly enlarge on hover */
+    }
+
+    .submitButton:disabled {
+        background-color: #ccc; /* Greyed out color for disabled state */
+        cursor: not-allowed; /* Disable pointer events */
+    }

@@ -1326,4 +1326,40 @@ public class PostgresDatabase : IDatabase
         var rowsAffected = await cmd.ExecuteNonQueryAsync();
         return rowsAffected > 0;
     }
+
+    public async Task<int> InsertSimBallotAsync(string username, List<DriverPrediction> driverPredictions)
+    {
+        using var cmd = _dataSource.CreateCommand(
+            @"INSERT INTO simBallot (username, score)
+                VALUES (@username, @score)
+                RETURNING simballot_id"
+        );
+
+        cmd.Parameters.AddWithValue("username", username);
+        cmd.Parameters.AddWithValue("score", DBNull.Value);
+
+        int ballotId;
+        await using (var reader = await cmd.ExecuteReaderAsync()) // Use ExecuteReaderAsync
+        {
+            await reader.ReadAsync(); // Read from the reader
+            ballotId = reader.GetInt32(0); // Get the returned ballot ID
+        }
+
+        for (int i = 0; i < driverPredictions.Count; i++)
+        {
+            using var cmdContent = _dataSource.CreateCommand(
+            @"INSERT INTO simballotContent (simballot_id, position, driver_name)
+                VALUES (@ballot_id, @position, @driver_name)"
+            );
+
+            cmdContent.Parameters.AddWithValue("ballot_id", ballotId);
+            cmdContent.Parameters.AddWithValue("position", driverPredictions[i].Position);
+            cmdContent.Parameters.AddWithValue("driver_name", driverPredictions[i].DriverName);
+
+            await using var contentReader = await cmdContent.ExecuteReaderAsync();
+
+        }
+
+        return ballotId;
+    }
 }

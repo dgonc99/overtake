@@ -93,4 +93,6 @@ public interface IDatabase
     Task<string> GetUserEmail(int userId);
 
     Task<bool> UpdateField(int userId, string fieldName, object fieldValue);
+
+    Task<int> InsertSimBallotAsync(string username, List<DriverPrediction> driverPredictions);
 }

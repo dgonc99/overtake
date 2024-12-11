@@ -123,6 +123,22 @@ CREATE TABLE raceResult (
 	PRIMARY KEY (race_id, position)
 );
 
+/* SIM TABLES */
+
+CREATE TABLE simBallot (
+	simballot_id SERIAL PRIMARY KEY,
+	username VARCHAR(255) NOT NULL,
+	score INT NULL
+);
+
+
+CREATE TABLE simballotContent(
+  simballot_id INT REFERENCES simBallot(simballot_id) ON DELETE CASCADE,
+  position INT,
+  driver_name VARCHAR(50) NULL,
+  PRIMARY KEY (simballot_id, position)
+);
+
 /* 
    **ChatGPT generated test data**
    **slightly modified to keep consistency of foreign keys**

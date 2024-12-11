@@ -1,85 +1,85 @@
 .container {
-  background: #15151e;
-  padding: 25px;
-  border-radius: 15px;
-  width: 80%;
+    background: #15151e;
+    padding: 25px;
+    border-radius: 15px;
+    width: 80%;
 }
 
-.container h1 {
-  color: white;
-  font-size: x-large;
-  align-items: center;
-}
+    .container h1 {
+        color: white;
+        font-size: x-large;
+        align-items: center;
+    }
 
-.container h2 {
-  color: white;
-  font-size: large;
-  align-items: center;
-}
+    .container h2 {
+        color: white;
+        font-size: large;
+        align-items: center;
+    }
 
-.container p {
-  color: white;
-  font-size: large;
-}
+    .container p {
+        color: white;
+        font-size: large;
+    }
 
-.container select {
-  color: white;
-  background-color: #630000;
-  border: 1px solid #aa0000;
-  border-radius: 5px;
-  padding: 5px;
-  margin: 5px;
-}
+    .container select {
+        color: white;
+        background-color: #630000;
+        border: 1px solid #aa0000;
+        border-radius: 5px;
+        padding: 5px;
+        margin: 5px;
+    }
 
 .winnerbox {
-  display: flex;
-  flex-direction: column;
-  padding: 10px;
-  justify-content: space-between;
-  align-items: center;
-  color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
 }
 
 .header {
-  border: #aa0000 3px solid;
-  padding: 10px;
-  border-radius: 15px;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
-  color: white;
+    border: #aa0000 3px solid;
+    padding: 10px;
+    border-radius: 15px;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    color: white;
 }
 
-.header img {
-  width: 150px;
-  height: 150px;
-  margin-right: 10px;
-}
+    .header img {
+        width: 150px;
+        height: 150px;
+        margin-right: 10px;
+    }
 
 .raceresults table {
-  margin-top: 20px;
-  width: 100%;
-  background: #15151e;
-  padding: 25px;
-  border-radius: 15px;
-  background-color: #630000;
-  text-align: center;
-  color: white;
+    margin-top: 20px;
+    width: 100%;
+    background: #15151e;
+    padding: 25px;
+    border-radius: 15px;
+    background-color: #630000;
+    text-align: center;
+    color: white;
 }
 
 .raceresults th {
-  padding: 10px;
-  border-bottom: 1px solid white;
-  background-color: #262630;
-  color: white;
-  font-size: large;
+    padding: 10px;
+    border-bottom: 1px solid white;
+    background-color: #262630;
+    color: white;
+    font-size: large;
 }
 
 .raceresults td {
-  padding: 3px;
-  font-size: small;
+    padding: 3px;
+    font-size: small;
 }
 
 .raceresults tr:nth-child(even) {
-  background-color: #420000;
+    background-color: #420000;
 }
